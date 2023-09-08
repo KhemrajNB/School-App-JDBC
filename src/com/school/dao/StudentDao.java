@@ -97,8 +97,8 @@ public class StudentDao {
 		return 0;
 	}
 	
-	public LinkedHashMap<Integer, Student> retrieveStudentALL() {
-		LinkedHashMap<Integer, Student> lh = new LinkedHashMap<>();
+	public void getStudentALL() {
+//		LinkedHashMap<Integer, Student> lh = new LinkedHashMap<>();
 		connection = helperclass.getConnection();
 		String sql = "SELECT * FROM student";
 //		Student student[] = null;
@@ -108,11 +108,14 @@ public class StudentDao {
 			resultSet = statement.executeQuery(sql);
 //			student = new Student[resultSet.getRow()];
 			while(resultSet.next()) {
-				Student s = new Student();
-				s.setId(resultSet.getInt(1));
-				s.setName(resultSet.getString(2));
-				s.setEmail(resultSet.getString(3));
-				lh.put(resultSet.getInt(1), s);
+				System.out.println(resultSet.getInt(1) + " " +resultSet.getString(2) + " "+ resultSet.getString(3));
+				System.out.println("===================================");
+				
+//				Student s = new Student();
+//				s.setId(resultSet.getInt(1));
+//				s.setName(resultSet.getString(2));
+//				s.setEmail(resultSet.getString(3));
+//				lh.put(resultSet.getInt(1), s);
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -126,7 +129,7 @@ public class StudentDao {
 			}
 		}
 		
-		return lh;
+//		return lh;
 	}
 	
 }

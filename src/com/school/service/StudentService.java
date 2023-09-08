@@ -21,7 +21,7 @@ public class StudentService {
 		return studentDao.updateStudentById(student);
 	}
 	
-	public LinkedHashMap<Integer, Student> retrieveStudentALL() {
-		return studentDao.retrieveStudentALL();
+	public void getStudentALL() {
+		studentDao.getStudentALL();
 	}
 }

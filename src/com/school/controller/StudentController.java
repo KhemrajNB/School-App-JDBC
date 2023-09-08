@@ -1,5 +1,7 @@
 package com.school.controller;
 
+import java.util.LinkedHashMap;
+
 import com.school.dto.Student;
 import com.school.service.StudentService;
 
@@ -28,5 +30,9 @@ public class StudentController {
 //		student.setName("Swastik");
 //		System.out.println(studentService.updateStudentById(student));
 		
+		
+		//=====> Retrieve All Data
+		StudentService studentService = new StudentService();
+		studentService.getStudentALL();
 	}
 }

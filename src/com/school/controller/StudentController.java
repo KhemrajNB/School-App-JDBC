@@ -1,6 +1,6 @@
 package com.school.controller;
 
-import java.util.LinkedHashMap;
+
 
 import com.school.dto.Student;
 import com.school.service.StudentService;
@@ -32,7 +32,12 @@ public class StudentController {
 		
 		
 		//=====> Retrieve All Data
+//		StudentService studentService = new StudentService();
+//		studentService.getStudentALL();
+		
+		
+		//=====> Retrieve Data by ID
 		StudentService studentService = new StudentService();
-		studentService.getStudentALL();
+		System.out.println(studentService.getStudentById(5));
 	}
 }

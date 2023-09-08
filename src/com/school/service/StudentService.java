@@ -1,6 +1,5 @@
 package com.school.service;
 
-import java.util.LinkedHashMap;
 
 import com.school.dao.StudentDao;
 import com.school.dto.Student;
@@ -23,5 +22,9 @@ public class StudentService {
 	
 	public void getStudentALL() {
 		studentDao.getStudentALL();
+	}
+	
+	public Student getStudentById(int id) {
+		return studentDao.getStudentById(id);
 	}
 }

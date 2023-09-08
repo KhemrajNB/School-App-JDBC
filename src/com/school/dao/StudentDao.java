@@ -5,7 +5,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.LinkedHashMap;
+
 
 import com.school.configuration.HelperClass;
 import com.school.dto.Student;
@@ -130,6 +130,36 @@ public class StudentDao {
 		}
 		
 //		return lh;
+	}
+	
+	
+	public Student getStudentById(int id) {
+		connection = helperclass.getConnection();
+		String sql = "SELECT * FROM student where id="+id;
+		Student student = new Student();
+		try {
+			Statement statement = connection.createStatement();
+			ResultSet resultSet = statement.executeQuery(sql);
+			while(resultSet.next()) {
+				student.setId(resultSet.getInt(1));
+				student.setName(resultSet.getString(2));
+				student.setEmail(resultSet.getString(3));
+			}
+			if(student.getName()==null) {
+				return null;
+			}
+		}catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			try {
+				connection.close();
+			} catch (SQLException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		
+		return student;
 	}
 	
 }

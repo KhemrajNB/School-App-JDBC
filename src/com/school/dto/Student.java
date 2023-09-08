@@ -27,5 +27,7 @@ public class Student {
 		this.email = email;
 	}
 	
-	
+	public String toString() {
+		return "{id = "+ id + ", name = " + name + ", email = " + email + "}";
+	}
 }
